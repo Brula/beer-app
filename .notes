@@ -1,0 +1,4 @@
+mkdir /var/beer-app (on server)
+scp beer-app-0.1.0.jar root@167.99.36.76:/var/beer-app/ (local)
+sudo ln -s /var/beer-app/beer-app-0.1.0.jar /etc/init.d/beer-app
+service beer-app start
