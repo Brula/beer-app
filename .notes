@@ -2,6 +2,7 @@ mkdir /var/beer-app (on server)
 scp beer-app-0.1.0.jar root@206.189.14.14:/var/beer-app/ (local)
 
 vi /etc/systemd/system/beer-app.service
+Systemctl daemon-reload
 
 [Unit]
 Description=A beer recommendation application
