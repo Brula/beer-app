@@ -1,4 +1,18 @@
 mkdir /var/beer-app (on server)
-scp beer-app-0.1.0.jar root@167.99.36.76:/var/beer-app/ (local)
-sudo ln -s /var/beer-app/beer-app-0.1.0.jar /etc/init.d/beer-app
-service beer-app start
+scp beer-app-0.1.0.jar root@206.189.14.14:/var/beer-app/ (local)
+
+vi /etc/systemd/system/beer-app.service
+
+[Unit]
+Description=A beer recommendation application
+After=syslog.target
+ 
+[Service]
+User=root
+ExecStart=/var/beer-app/beer-app-0.1.0.jar SuccessExitStatus=143 
+ 
+[Install] 
+WantedBy=multi-user.target
+
+
+http://206.189.14.14:8080/
